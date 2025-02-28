@@ -2,10 +2,11 @@ import React, { ReactNode, useEffect, useState } from "react";
 import { ThemeProvider } from "@emotion/react"; 
 import {
   useFonts,
-  NunitoSans_400Regular,
-  NunitoSans_700Bold,
-  NunitoSans_800ExtraBold,
-} from "@expo-google-fonts/nunito-sans"; 
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat"; 
 import * as SplashScreen from "expo-splash-screen";
 
 import theme from "../styles/theme";
@@ -18,9 +19,10 @@ SplashScreen.preventAutoHideAsync();
 
 export function AppProvider({ children }: AppProviderProps) {
   const [fontsLoaded] = useFonts({
-    NunitoSans_400Regular,
-    NunitoSans_700Bold,
-    NunitoSans_800ExtraBold,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold,
   });
 
   const [isReady, setIsReady] = useState(false);

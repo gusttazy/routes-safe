@@ -24,7 +24,7 @@ export const ContentContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${theme.fonts.extrabold};
+  font-family: ${theme.fonts.bold};
   font-size: 45px;
   color: ${theme.colors.verdePrincipal};
   text-align: center;
@@ -32,7 +32,7 @@ export const Title = styled.Text`
 `;
 
 export const Description = styled.Text`
-  font-family: ${theme.fonts.regular};
+  font-family: ${theme.fonts.medium};
   font-size: 13px;
   color: ${theme.colors.texto};
   text-align: center;
@@ -49,6 +49,6 @@ export const AlreadyAccount = styled.Text`
 `;
 
 export const LoginText = styled.Text`
-  font-family: ${theme.fonts.bold};
+  font-family: ${theme.fonts.semibold};
   color: ${theme.colors.verdePrincipal};
 `;

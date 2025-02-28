@@ -16,7 +16,7 @@ export const CardContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${theme.fonts.extrabold};
+  font-family: ${theme.fonts.bold};
   font-size: 30px;
   color: ${theme.colors.verdePrincipal};
   text-align: center;
@@ -37,7 +37,7 @@ export const RegisterText = styled.Text`
 `;
 
 export const SubTitle = styled.Text`
-  font-family: ${theme.fonts.regular};
+  font-family: ${theme.fonts.medium};
   color: ${theme.colors.texto};
   text-align: center;
   font-size: 14px;

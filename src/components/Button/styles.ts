@@ -13,5 +13,5 @@ export const ButtonContainer = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-family: ${theme.fonts.bold};
   font-size: 18px;
-  color: ${theme.colors.inputFundo};
+  color: ${theme.colors.textoBranco};
 `;

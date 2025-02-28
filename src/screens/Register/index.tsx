@@ -1,6 +1,19 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity } from "react-native";
-import { SafeContainer, CardContainer, Title, SubTitle, DontHaveAccount, RegisterText } from "./styles";
+import {
+  View,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from "react-native";
+import {
+  SafeContainer,
+  CardContainer,
+  Title,
+  SubTitle,
+  DontHaveAccount,
+  RegisterText,
+} from "./styles";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -13,7 +26,8 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   const handleRegister = () => console.log("Cadastro pressionado");
   const handleBack = () => navigation.goBack();
@@ -27,21 +41,56 @@ const Register: React.FC = () => {
         <ArrowLeftIcon size={30} color="#fff" />
       </TouchableOpacity>
 
-      <CardContainer>
-        <Title>Cadastre-se</Title>
-        <SubTitle>Preencha as informações abaixo</SubTitle>
-        <View>
-          <Input label="Nome" value={firstName} onChangeText={setFirstName} />
-          <Input label="Email" value={email} onChangeText={setEmail} keyboardType="email-address" />
-          <Input label="Senha" value={password} onChangeText={setPassword} secureTextEntry />
-          <Input label="Confirmar Senha" value={confirmPassword} onChangeText={setConfirmPassword} secureTextEntry />
-        </View>
-        <Button title="Cadastrar" onPress={handleRegister} />
-        <DontHaveAccount>
-          Já possui uma conta?{" "}
-          <RegisterText onPress={() => navigation.navigate("Login")}>Entrar</RegisterText>
-        </DontHaveAccount>
-      </CardContainer>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1, width: "100%" }}
+      >
+        <ScrollView
+          contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <CardContainer>
+            <Title>Cadastre-se</Title>
+            <SubTitle>Preencha as informações abaixo</SubTitle>
+            <View style={{ width: "100%" }}>
+              <Input
+                label="Nome"
+                value={firstName}
+                onChangeText={setFirstName}
+              />
+              <Input
+                label="Email"
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+              />
+              <Input
+                label="Senha"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+              />
+              <Input
+                label="Confirmar Senha"
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+                secureTextEntry
+              />
+            </View>
+            <Button title="Cadastrar" onPress={handleRegister} />
+            <DontHaveAccount>
+              Já possui uma conta?{" "}
+              <RegisterText onPress={() => navigation.navigate("Login")}>
+                Entrar
+              </RegisterText>
+            </DontHaveAccount>
+          </CardContainer>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeContainer>
   );
 };

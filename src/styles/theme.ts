@@ -5,12 +5,14 @@ const theme = {
     texto: "#99b0a7",
     textoPreto: "#000",
     inputFundo: "#f3f2e4",
+    textoBranco: "#fff"
   },
   fonts: {
-    regular: "NunitoSans_400Regular",
-    bold: "NunitoSans_700Bold",
-    extrabold: "NunitoSans_800ExtraBold",
-  }
+    regular: "Montserrat_400Regular", 
+    medium: "Montserrat_500Medium",   
+    semibold: "Montserrat_600SemiBold", 
+    bold: "Montserrat_700Bold",      
+  },
 };
 
 export type Theme = typeof theme;
